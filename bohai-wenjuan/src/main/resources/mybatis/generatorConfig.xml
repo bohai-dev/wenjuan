@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <!-- 驱动物理路径 -->
+  <!-- mysql -->
+  <!-- <classPathEntry location="D:\develop\apache-maven-3.3.9\mvnRepo\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar" /> -->
+  
+  <!-- oracle -->  
+  <classPathEntry location="D:\git\bohai-detaCenter\bohai-dataCenter\ojdbc6.jar" />
+  <context id="MysqlTables" targetRuntime="MyBatis3">
+    <!-- mysql -->
+    <!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/sjzx?useUnicode=true&amp;characterEncoding=utf-8"
+        userId="sjzx"
+        password="sjzx@123">
+    </jdbcConnection> -->
+    <!-- oracle -->
+    <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+        connectionURL="jdbc:oracle:thin:@localhost:1521:xe"
+        userId="questionnaire"
+        password="questionnaire">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.bohai.questionnaire.entity" targetProject="src\main\java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="mybatis.mapper"  targetProject="src\main\resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.bohai.questionnaire.dao"  targetProject="src\main\java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+	<!-- 去掉Example辅助类 -->
+	<!-- enableSelectByExample="true" enableDeleteByExample="false" enableCountByExample="false"
+    	enableUpdateByExample="false" selectByExampleQueryId="false" --> 
+    
+    
+    
+    
+    <!-- <table schema="" tableName="T_QUESTIONNAIRE" domainObjectName="Questionnaire"
+        enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false"
+        enableUpdateByExample="false" selectByExampleQueryId="false">
+    </table>
+    
+    <table schema="" tableName="T_QUESTIONNAIRE_ANSWER" domainObjectName="QuestionnaireAnswer"
+        enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false"
+        enableUpdateByExample="false" selectByExampleQueryId="false">
+    </table>
+    
+    <table schema="" tableName="T_QUESTIONNAIRE_SUBJECT" domainObjectName="QuestionnaireSubject"
+        enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false"
+        enableUpdateByExample="false" selectByExampleQueryId="false">
+    </table>
+    
+    <table schema="" tableName="SYS_USER" domainObjectName="SysUser"
+        enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false"
+        enableUpdateByExample="false" selectByExampleQueryId="false">
+    </table> -->
+    
+    
+    <!-- <table schema="" tableName="T_USER_ANSWER" domainObjectName="UserAnswer"
+        enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false"
+        enableUpdateByExample="false" selectByExampleQueryId="false">
+    </table> -->
+    
+    <table schema="" tableName="T_USER_QUESTIONNAIRE" domainObjectName="UserQuestionnaire"
+        enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false"
+        enableUpdateByExample="false" selectByExampleQueryId="false">
+    </table>
+    
+    <!-- <table schema="" tableName="T_USER_SUBJECT" domainObjectName="UserSubject"
+        enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false"
+        enableUpdateByExample="false" selectByExampleQueryId="false">
+    </table> -->
+    
+  </context>
+</generatorConfiguration>
