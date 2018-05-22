@@ -53,7 +53,7 @@
 	
     
 	<!-- 异常处理类 -->
-	<bean class="com.bohai.questionnaire.exception.CommonExceptionResolver">
-	</bean>
+	<!-- <bean class="com.bohai.questionnaire.exception.CommonExceptionResolver">
+	</bean> -->
 	
 </beans>
